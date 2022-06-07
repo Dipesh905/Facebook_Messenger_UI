@@ -157,7 +157,7 @@ class _ChatHomePageState extends State<ChatHomePage> {
                           maxRadius: 7,
                           backgroundColor: Colors.green,
                         ),
-                      )
+                      ),
                     ],
                   );
                 },

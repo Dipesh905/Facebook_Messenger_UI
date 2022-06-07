@@ -97,67 +97,11 @@ class StoriesPage extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  Stack(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(5),
-                        height: 200,
-                        width: 115,
-                        decoration: BoxDecoration(
-                            image: const DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(AppImage.girlsProfilePicture),
-                            ),
-                            borderRadius: BorderRadius.circular(10)),
-                        //   color: Colors.amber,
-                      ),
-                      const Positioned(
-                        top: 10,
-                        left: 10,
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage(AppImage.boysProfilePicture),
-                        ),
-                      ),
-                      const Positioned(
-                        top: 5,
-                        right: 5,
-                        child: Padding(
-                          padding: EdgeInsets.all(5.0),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.brown,
-                            radius: 10,
-                            child: Center(
-                              child: Text(
-                                "1",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 5,
-                        left: 5,
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                "Niraj",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              Text(
-                                "Neupane",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const StoryCard(
+                      name: "Dipesh ",
+                      surname: 'Ghimire',
+                      storyImage: AppImage.boysProfilePicture,
+                      profileImage: AppImage.girlsProfilePicture),
                 ],
               ),
               const SizedBox(
@@ -244,130 +188,16 @@ class StoriesPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Stack(
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.all(5),
-                            height: 200,
-                            width: 115,
-                            decoration: BoxDecoration(
-                                image: const DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image:
-                                      AssetImage(AppImage.boysProfilePicture),
-                                ),
-                                borderRadius: BorderRadius.circular(10)),
-                            //   color: Colors.amber,
-                          ),
-                          const Positioned(
-                            top: 10,
-                            left: 10,
-                            child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage(AppImage.girlsProfilePicture),
-                            ),
-                          ),
-                          const Positioned(
-                            top: 5,
-                            right: 5,
-                            child: Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: CircleAvatar(
-                                backgroundColor: Colors.brown,
-                                radius: 10,
-                                child: Center(
-                                  child: Text(
-                                    "1",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            left: 5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text(
-                                    "Dipesh",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text(
-                                    "Ghimire",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Stack(
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.all(5),
-                            height: 200,
-                            width: 115,
-                            decoration: BoxDecoration(
-                                image: const DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image:
-                                      AssetImage(AppImage.boysProfilePicture),
-                                ),
-                                borderRadius: BorderRadius.circular(10)),
-                            //   color: Colors.amber,
-                          ),
-                          const Positioned(
-                            top: 10,
-                            left: 10,
-                            child: CircleAvatar(
-                              backgroundImage:
-                                  AssetImage(AppImage.girlsProfilePicture),
-                            ),
-                          ),
-                          const Positioned(
-                            top: 5,
-                            right: 5,
-                            child: Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: CircleAvatar(
-                                backgroundColor: Colors.brown,
-                                radius: 10,
-                                child: Center(
-                                  child: Text(
-                                    "1",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: 5,
-                            left: 5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text(
-                                    "Ravi",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text(
-                                    "Nepal",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      const StoryCard(
+                          name: "Ram ",
+                          surname: 'Adhikari',
+                          storyImage: AppImage.girlsProfilePicture,
+                          profileImage: AppImage.boysProfilePicture),
+                      const StoryCard(
+                          name: "Hari ",
+                          surname: 'karki',
+                          storyImage: AppImage.girlsProfilePicture,
+                          profileImage: AppImage.boysProfilePicture),
                     ],
                   );
                 },
@@ -376,6 +206,82 @@ class StoriesPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class StoryCard extends StatelessWidget {
+  const StoryCard({
+    Key? key,
+    required this.name,
+    required this.surname,
+    required String storyImage,
+    required String profileImage,
+  }) : super(key: key);
+
+  final String name;
+  final String surname;
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          margin: const EdgeInsets.all(5),
+          height: 200,
+          width: 115,
+          decoration: BoxDecoration(
+              image: const DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(AppImage.girlsProfilePicture),
+              ),
+              borderRadius: BorderRadius.circular(10)),
+          //   color: Colors.amber,
+        ),
+        const Positioned(
+          top: 10,
+          left: 10,
+          child: CircleAvatar(
+            backgroundImage: AssetImage(AppImage.boysProfilePicture),
+          ),
+        ),
+        const Positioned(
+          top: 5,
+          right: 5,
+          child: Padding(
+            padding: EdgeInsets.all(5.0),
+            child: CircleAvatar(
+              backgroundColor: Colors.brown,
+              radius: 10,
+              child: Center(
+                child: Text(
+                  "1",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 5,
+          left: 5,
+          child: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                Text(
+                  surname,
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

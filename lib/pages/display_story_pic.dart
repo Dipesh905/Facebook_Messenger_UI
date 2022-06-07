@@ -100,9 +100,9 @@ class _DisplayStoryPicState extends State<DisplayStoryPic> {
                             ),
                             Icon(Icons.cancel, color: Colors.white)
                           ],
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
