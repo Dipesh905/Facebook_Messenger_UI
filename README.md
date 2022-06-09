@@ -1,16 +1,15 @@
-# messenger_chat_ui
+# Facebook Messenger UI Clone
 
-A new Flutter project.
+This is a Facebook Messenger UI Clone App build from flutter and dart.
 
-## Getting Started
+below are the screenshots of the App
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/52662002/172282174-5da46c27-b532-4a47-ad58-e88a3bf622e9.jpg" width="250" /> 
+  
+  <img src="https://user-images.githubusercontent.com/52662002/172282293-8a9bcd14-9f3e-4be2-8ed3-5d59b4645f9e.jpg" width="250" /> 
+  
+   <img src="https://user-images.githubusercontent.com/52662002/172282538-746bb00e-d096-43ae-9205-d51cb6ec1a09.jpg" width="250" /> 
+ 
+   <img src="https://user-images.githubusercontent.com/52662002/172281651-974f0a72-72cc-4394-8793-68ecedef3a9a.jpg" width="250" /> 
+</p>
