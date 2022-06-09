@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:messenger_chat_ui/consts/app_image.dart';
 
 class DisplayStoryPic extends StatefulWidget {
-  const DisplayStoryPic({Key? key}) : super(key: key);
+  DisplayStoryPic({required this.name, required this.image, Key? key})
+      : super(key: key);
+
+  String name;
+  String image;
 
   @override
   _DisplayStoryPicState createState() => _DisplayStoryPicState();
@@ -69,21 +73,20 @@ class _DisplayStoryPicState extends State<DisplayStoryPic> {
                       children: [
                         Row(
                           children: [
-                            const CircleAvatar(
-                              backgroundImage:
-                                  AssetImage(AppImage.girlsProfilePicture),
+                            CircleAvatar(
+                              backgroundImage: AssetImage(widget.image),
                             ),
                             const SizedBox(
                               width: 8,
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
-                                  'Ram Adhikari',
-                                  style: TextStyle(color: Colors.white),
+                                  widget.name,
+                                  style: const TextStyle(color: Colors.white),
                                 ),
-                                Text('19 h',
+                                const Text('19 h',
                                     style: TextStyle(color: Colors.grey)),
                               ],
                             ),

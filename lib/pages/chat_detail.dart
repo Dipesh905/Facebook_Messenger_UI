@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:messenger_chat_ui/consts/app_image.dart';
 
 class ChatDetail extends StatefulWidget {
-  const ChatDetail({Key? key}) : super(key: key);
+  ChatDetail({required this.image, required this.fullName, Key? key})
+      : super(key: key);
+
+  String image;
+  String fullName;
 
   @override
   _ChatDetailState createState() => _ChatDetailState();
@@ -20,11 +23,11 @@ class _ChatDetailState extends State<ChatDetail> {
               Align(
                 alignment: Alignment.topRight,
                 child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Good Morning baba, sanchai hunuhuncha? ",
-                      style: TextStyle(color: Colors.white),
+                      "Good Morning ${widget.fullName}, sanchai hunuhuncha? ",
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                   height: 50,
@@ -203,377 +206,6 @@ class _ChatDetailState extends State<ChatDetail> {
               ),
               const SizedBox(
                 height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Good Morning baba, sanchai hunuhuncha? ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Good Morning babu sanchai chu ani timi? ",
-                      // style: TextStyle(color: Colors.white
-                      // ),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "ma pani sanchai chu baba ani k gardai hunuhuncha? ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "ma paddai chu babu timi k gardai chau? ",
-                      // style: TextStyle(color: Colors.white
-                      // ),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "ma pani paddai chu baba ani k cha ghar tirako kbr? ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sabai thik cha babu, teta timro kbr k cha? ",
-                      // style: TextStyle(color: Colors.white
-                      // ),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Mero pani sab thik cha baba yeta pani sabai thikai cha  ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Good Morning baba, sanchai hunuhuncha? ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Good Morning babu sanchai chu ani timi? ",
-                      // style: TextStyle(color: Colors.white
-                      // ),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "ma pani sanchai chu baba ani k gardai hunuhuncha? ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "ma paddai chu babu timi k gardai chau? ",
-                      // style: TextStyle(color: Colors.white
-                      // ),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "ma pani paddai chu baba ani k cha ghar tirako kbr? ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sabai thik cha babu, teta timro kbr k cha? ",
-                      // style: TextStyle(color: Colors.white
-                      // ),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Mero pani sab thik cha baba yeta pani sabai thikai cha  ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.blue.shade400,
-                        Colors.blue.shade500,
-                        Colors.blue.shade800,
-                      ],
-                    ),
-                  ),
-                ),
               ),
               const SizedBox(
                 height: 10,
@@ -619,16 +251,23 @@ class _ChatDetailState extends State<ChatDetail> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const CircleAvatar(
-              backgroundImage: AssetImage(AppImage.boysProfilePicture),
+            CircleAvatar(
+              backgroundImage: AssetImage(widget.image),
               radius: 25,
             ),
             Column(
               children: [
-                const Text(
-                  "Sudip Stha",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.black),
+                SizedBox(
+                  width: 100,
+                  child: Text(
+                    widget.fullName,
+                    style: const TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 Text(
                   "Active 5 hours ago",

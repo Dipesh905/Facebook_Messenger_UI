@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_chat_ui/consts/app_image.dart';
+import 'package:messenger_chat_ui/pages/models/users_model.dart';
 
 class PeoplesPage extends StatefulWidget {
   const PeoplesPage({
@@ -11,28 +12,6 @@ class PeoplesPage extends StatefulWidget {
 }
 
 class _PeoplesPageState extends State<PeoplesPage> {
-  List peoples = [
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,27 +56,28 @@ class _PeoplesPageState extends State<PeoplesPage> {
         ),
       ),
       body: ListView.builder(
-        itemCount: peoples.length,
+        itemCount: usersDetail.length,
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             leading: Stack(
-              children: const [
+              children: [
                 CircleAvatar(
                   radius: 20,
-                  backgroundImage: AssetImage(AppImage.boysProfilePicture),
+                  backgroundImage: AssetImage(usersDetail[index].profilePic),
                 ),
                 Positioned(
                   bottom: 0,
                   right: 0,
                   child: CircleAvatar(
-                    radius: 5,
-                    backgroundColor: Colors.green,
-                  ),
+                      radius: 5,
+                      backgroundColor: usersDetail[index].online
+                          ? Colors.green
+                          : Colors.grey),
                 )
               ],
             ),
             title: Text(
-              peoples[index],
+              '${usersDetail[index].firstName}  ${usersDetail[index].lastName}',
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
           );

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:messenger_chat_ui/consts/app_image.dart';
 import 'package:messenger_chat_ui/pages/chat_detail.dart';
 
+import 'package:messenger_chat_ui/pages/models/users_model.dart';
+import 'package:messenger_chat_ui/widgets/chat_card.dart';
+import 'package:messenger_chat_ui/widgets/online_users_profile.dart';
+
 class ChatHomePage extends StatefulWidget {
   const ChatHomePage({
     Key? key,
@@ -12,44 +16,6 @@ class ChatHomePage extends StatefulWidget {
 }
 
 class _ChatHomePageState extends State<ChatHomePage> {
-  List shortname = [
-    "Ram ",
-    "Sita ",
-    "Hari krishna ",
-    "Madhav ",
-    "Ram ",
-    "Sita ",
-    "Hari krishna ",
-    "Madhav ",
-    "Ram ",
-    "Sita ",
-    "Hari krishna ",
-    "Madhav ",
-  ];
-
-  List peoples = [
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-    "Ram Adhikari",
-    "Sita Thakuri",
-    "Hari krishna neupane",
-    "Madhav chettri",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,101 +68,97 @@ class _ChatHomePageState extends State<ChatHomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
-          children: [
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey[200]),
-              child: TextField(
-                decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.only(left: 20),
-                    fillColor: Colors.grey,
-                    hintText: "search",
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20))),
-              ),
-            ),
-            const SizedBox(
+          children: const [
+            ChatSearchBarSection(),
+            SizedBox(
               height: 10,
             ),
-            Container(
-              padding: const EdgeInsets.all(5),
-              height: 115,
-              width: double.infinity,
-              // color: Colors.green,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: shortname.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Stack(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(5),
-                        child: Column(
-                          children: [
-                            const CircleAvatar(
-                              backgroundImage:
-                                  AssetImage(AppImage.boysProfilePicture),
-                              radius: 30,
-                            ),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            Text(shortname[index]),
-                            const Text("Neupane"),
-                          ],
-                        ),
-                      ),
-                      const Positioned(
-                        bottom: 40,
-                        right: 10,
-                        child: CircleAvatar(
-                          maxRadius: 7,
-                          backgroundColor: Colors.green,
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: peoples.length,
-              itemBuilder: (BuildContext context, int index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const ChatDetail();
-                        },
-                      ),
-                    );
-                  },
-                  child: ListTile(
-                    leading: const CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage(
-                        AppImage.girlsProfilePicture,
-                      ),
-                    ),
-                    title: Text(peoples[index]),
-                    subtitle: Text("${peoples[index]} called you"),
-                    trailing: const CircleAvatar(
-                      maxRadius: 5,
-                    ),
-                  ),
-                );
-              },
-            ),
+            ShowOnlineUsers(),
+            ShowChatCard()
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ChatSearchBarSection extends StatelessWidget {
+  const ChatSearchBarSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 45,
+      width: double.infinity,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20), color: Colors.grey[200]),
+      child: TextField(
+        decoration: InputDecoration(
+            contentPadding: const EdgeInsets.only(left: 20),
+            fillColor: Colors.grey,
+            hintText: "search",
+            prefixIcon: const Icon(Icons.search),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+      ),
+    );
+  }
+}
+
+class ShowChatCard extends StatelessWidget {
+  const ShowChatCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: List.generate(
+          usersDetail.length,
+          (index) => InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => ChatDetail(
+                              image: usersDetail[index].profilePic,
+                              fullName:
+                                  " ${usersDetail[index].firstName}  ${usersDetail[index].lastName}")));
+                },
+                child: ChatCard(
+                    firstname: usersDetail[index].firstName,
+                    lastname: usersDetail[index].lastName,
+                    profilePic: usersDetail[index].profilePic,
+                    isOnline: usersDetail[index].online),
+              )),
+    );
+  }
+}
+
+class ShowOnlineUsers extends StatelessWidget {
+  const ShowOnlineUsers({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(5),
+      height: 115,
+      width: double.infinity,
+      // color: Colors.green,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: usersDetail.length,
+        itemBuilder: (BuildContext context, int index) {
+          return OnlineUsers(
+              firstname: usersDetail[index].firstName,
+              lastname: usersDetail[index].lastName,
+              isOnline: usersDetail[index].online,
+              profilePic: usersDetail[index].profilePic);
+        },
       ),
     );
   }
